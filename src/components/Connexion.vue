@@ -6,7 +6,7 @@
 
         <p><input type="password" placeholder="Entrer le mot de passe" name="password" required></p>
 
-        <input type="submit"  value='LOGIN' >
+        <input type="submit"  value='LOGIN' @click="connexionMembre" >
         <button>
             <router-link class="button_is_text"  to='/Inscription'>Créer un compte</router-link>
         </button>
@@ -19,6 +19,26 @@
         name: 'Connexion',
         mounted() {
 
+        },
+        data: function () {
+
+            return {
+                email:'',
+                password:''
+            }
+        },
+        methods:{
+            connexionMembre(){
+                let parametre = {
+
+                    email:this.email,
+                    password:this.password
+
+                };
+             axios.post("members/signin",parametre).then((response) =>{
+                 this.$router.push('/Accueil')
+             })
+            }
         }
 
     }
