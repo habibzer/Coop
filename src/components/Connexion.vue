@@ -7,7 +7,9 @@
         <p><input type="password" placeholder="Entrer le mot de passe" name="password" required></p>
 
         <input type="submit"  value='LOGIN' >
-        <input type="submit"  value='INSCRIPTION' >
+        <button>
+            <router-link class="button_is_text"  to='/Inscription'>Créer un compte</router-link>
+        </button>
 
     </div>
 </template>

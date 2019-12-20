@@ -22,6 +22,10 @@
         return this.$store.state.membre ? true : false;
 
       }
+  },
+    methode:{
+
+
   }
 
 
