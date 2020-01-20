@@ -1,15 +1,20 @@
 <template>
 
     <div class="insription">
-
-        <input type="text" placeholder="Entrer le nom d'utilisateur" name="fullname" v-model="fullname" required>
-        <p>
-            <input type="text" placeholder="email" name="email" v-model="email" required>
-        </p>
-
-        <p><input type="password" placeholder="Entrer le mot de passe" name="password" v-model="password" required></p>
-
-        <input type="submit"  value="valider l'inscription" @click="setMembre">
+        <form @submit.prevent="setMembre">
+            <div>
+                <label >Full name : </label><input type="text" placeholder="Entrer le nom d'utilisateur" v-model="fullname" required/>
+            </div>
+            <div>
+                <label >Email : </label><input type="text" placeholder="email" v-model="email" required/>
+            </div>
+            <div>
+                <label >Password : </label><input type="password" placeholder="Entrer le mot de passe" v-model="password" required/>
+            </div>
+            <div>
+                <input type="submit"  value="valider l'inscription">
+            </div>
+        </form>
     </div>
 
 
@@ -38,7 +43,7 @@
 
             };
             axios.post("members",parametre).then((response) =>{
-                this.$router.push('/Connexion')
+                this.$router.push('/Connexion');
             })
         }
     }

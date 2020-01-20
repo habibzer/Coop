@@ -19,16 +19,9 @@
 
       membreConnecter()
       {
-        return this.$store.state.membre ? true : false;
-
+        return this.$store.state.membre;
       }
-  },
-    methode:{
-
-
   }
-
-
 
   }
 

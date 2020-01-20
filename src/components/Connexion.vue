@@ -1,16 +1,16 @@
 <template>
-    <div class="Connexion">
+    <div class="Connexion form-group" >
         <h2>Co'op - Identification</h2>
+        <form @submit.prevent="connexionMembre">
+            <input type="text" placeholder="Entrer le nom d'utilisateur" v-model="email" required class="form-control"  >
 
-        <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
+            <input type="password" placeholder="Entrer le mot de passe" v-model="password" required class="form-control">
 
-        <p><input type="password" placeholder="Entrer le mot de passe" name="password" required></p>
-
-        <input type="submit"  value='LOGIN' @click="connexionMembre" >
-        <button>
-            <router-link class="button_is_text"  to='/Inscription'>Créer un compte</router-link>
-        </button>
-
+            <input type="submit"  value='LOGIN'  class="btn btn-primary">
+            <button >
+                <router-link class="button_is_text"  to='/Inscription' >Créer un compte</router-link>
+            </button>
+        </form>
     </div>
 </template>
 
@@ -35,8 +35,12 @@
                     password:this.password
 
                 };
+
              axios.post("members/signin",parametre).then((response) =>{
-                 this.$router.push('/Accueil')
+                 this.$router.push('/AddChannel');
+                 this.$store.commit('setSession',response.data);
+             }).catch(error => {
+                 alert(error.response.data.message);
              })
             }
         }
