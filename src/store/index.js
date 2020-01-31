@@ -12,9 +12,13 @@ export default new Vuex.Store({
   plugins:[vp.plugin],
   state: {
     membre: false,
+    membres: [],
     tokenSession: false
   },
   mutations: {
+    setMembres(state,membres) {
+      state.membres=membres;
+    },
     setSession(state,data){
       state.tokenSession=data.token;
       state.membre=data.member;

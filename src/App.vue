@@ -1,14 +1,23 @@
 <template>
   <div id="app">
 
+    <navigation></navigation>
     <router-view/>
   </div>
 </template>
 
 <script>
+  import Navigation from "@/components/Navigation.vue";
 
   export default {
+    components : {
+      Navigation
+    },
     mounted() {
+    axios.get('members').then(response => {
+      this.$store.commit('setMembres',response.data);
+    });
+
       if(!this.membreConnecter){
 
         this.$router.push('Connexion')

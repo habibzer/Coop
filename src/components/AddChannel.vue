@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h1>Créer une conversation</h1>
         <form @submit.prevent="addChannel">
             <div>
                 <label >Titre : </label><input type="text" placeholder="Titre" v-model="titre" required/>
@@ -10,6 +11,8 @@
             <div>
                 <input type="submit" value="Ajouter une conversation">
             </div>
+                <router-link to="/">Annuler</router-link>
+
         </form>
     </div>
 </template>
@@ -25,7 +28,7 @@
             addChannel(){
                 axios.post('channels',{label:this.titre,topic:this.topic,token:this.$store.state.tokenSession}).then(response => {
                     console.log('Conversation ajoutée : '+response.data.label);
-                    this.$router.push("/Accueil");
+                    this.$router.push("/");
                 }).catch(error => alert(error.response.data.message))
             }
         }

@@ -28,7 +28,8 @@
             return {
                 fullname:'',
                 email:'',
-                password:''
+                password:'',
+
             }
 
         },
@@ -43,6 +44,7 @@
 
             };
             axios.post("members",parametre).then((response) =>{
+
                 this.$router.push('/Connexion');
             })
         }
