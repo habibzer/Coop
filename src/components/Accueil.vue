@@ -1,6 +1,7 @@
 <template>
     <div>
 
+        <h1>Liste des conversations :</h1>
         <section>
             <ul class="list-group">
                 <li class="list-group-item" v-for="conversation in conversations">{{conversation.label}}</li>

@@ -5,6 +5,7 @@ import Inscription from "../components/Inscription";
 import Accueil from "../components/Accueil";
 import AddChannel from "../components/AddChannel.vue";
 import Membres from "../components/Membres";
+import DetailMembre from "../components/DetailMembre";
 
 
 Vue.use(VueRouter)
@@ -34,6 +35,11 @@ const routes = [
     path: '/Members',
     name: 'Members',
     component: Membres
+  },
+  {
+    path: '/DetailMembre/:identifiant',
+    name: 'DetailMembre',
+    component: DetailMembre
   }
 ]
 

@@ -13,7 +13,8 @@ export default new Vuex.Store({
   state: {
     membre: false,
     membres: [],
-    tokenSession: false
+    tokenSession: false,
+
   },
   mutations: {
     setMembres(state,membres) {
@@ -22,7 +23,8 @@ export default new Vuex.Store({
     setSession(state,data){
       state.tokenSession=data.token;
       state.membre=data.member;
-    }
+    },
+
   },
   actions: {
   },

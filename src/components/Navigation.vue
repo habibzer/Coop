@@ -10,7 +10,7 @@
                     <router-link to="/Members" class="nav-link">Membres</router-link>
                 </li>
                 <li class="nav-item">
-                     <router-link to="/AddChannel" class="nav-link">Créer une conversation*</router-link>
+                     <router-link to="/AddChannel" class="nav-link">Créer une conversation</router-link>
                 </li>
             </ul>
     </nav>

@@ -7,6 +7,9 @@ import axios from 'axios'
   import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 
+import {outils} from './outils'
+Vue.mixin(outils);
+
 window.axios = axios.create({
   baseURL : 'https://tools.sopress.net/iut/coop/api/',
   headers:{'Authorization': '7a35f161765bb57a7e047e59faf056e8084c8ba6'}
