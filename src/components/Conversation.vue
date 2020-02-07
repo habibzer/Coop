@@ -3,17 +3,19 @@
         <div>
            <h1>Conversation : {{conversation.label}} </h1>
             <h2>Topic : {{conversation.topic}} </h2>
+            <input type="text" placeholder="Entrez votre message ici et appuyez sur entrée" class="barre">
         </div>
-
-        <input type="text" placeholder="Entrez votre message ici et appuyez sur entrée" class="barre">
 
     </section>
 </template>
 
 <script>
+    import Message from "./Message";
     export default {
         name : 'Conversation',
-
+    components:{
+            Message
+    },
         data:function () {
             return {
 
