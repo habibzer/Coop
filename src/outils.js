@@ -6,10 +6,10 @@ export const outils = {
                 let membre = this.$store.state.membres[i];
                 if(id == membre.id){
                     return membre;
-                  /*  console.log(membre)*/
                 }
             }
 
-        }
+        },
+
     }
 }

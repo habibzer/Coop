@@ -6,6 +6,7 @@ import Accueil from "../components/Accueil";
 import AddChannel from "../components/AddChannel.vue";
 import Membres from "../components/Membres";
 import DetailMembre from "../components/DetailMembre";
+import Conversation from "../components/Conversation";
 
 
 Vue.use(VueRouter)
@@ -40,6 +41,11 @@ const routes = [
     path: '/DetailMembre/:identifiant',
     name: 'DetailMembre',
     component: DetailMembre
+  },
+  {
+    path: '/Conversation',
+    name: 'Conversation',
+    component: Conversation
   }
 ]
 

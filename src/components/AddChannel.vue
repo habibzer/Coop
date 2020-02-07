@@ -26,10 +26,12 @@
         },
         methods:{
             addChannel(){
+
                 axios.post('channels',{label:this.titre,topic:this.topic,token:this.$store.state.tokenSession}).then(response => {
                     console.log('Conversation ajoutée : '+response.data.label);
                     this.$router.push("/");
                 }).catch(error => alert(error.response.data.message))
+
             }
         }
     }

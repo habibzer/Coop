@@ -14,6 +14,7 @@ export default new Vuex.Store({
     membre: false,
     membres: [],
     tokenSession: false,
+    conversations:[]
 
   },
   mutations: {
@@ -24,6 +25,7 @@ export default new Vuex.Store({
       state.tokenSession=data.token;
       state.membre=data.member;
     },
+
 
   },
   actions: {
